@@ -64,8 +64,12 @@ userSchema.pre("save", async function () {
     const hashedPassword = await bcrypt.hash(this.password, 8);
     this.password = hashedPassword;
 });
+userschema.statics.checkEmail = async function (email) {
+    return await this.findOne({ email });;
+}
 
-const User=mongoose.model("User",userSchema)
+
+const User = mongoose.model("User", userSchema)
 
 
 export default User
