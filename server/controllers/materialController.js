@@ -1,6 +1,6 @@
 import Material from "../models/Material.js"
 
-// إضافة مادة جديدة
+
 export const AddMaterial = async (req, res) => {
     try {
         const { subject, title, type, dueDate } = req.body;
@@ -29,7 +29,7 @@ export const AddMaterial = async (req, res) => {
     }
 };
 
-// جلب كل المواد لمادة معينة
+
 export const GetMaterialBySubject = async (req, res) => {
     try {
         const { subjectId } = req.params;
@@ -40,7 +40,7 @@ export const GetMaterialBySubject = async (req, res) => {
     }
 };
 
-// حذف مادة
+
 export const DeleteMaterial = async (req, res) => {
     try {
         const { id } = req.params;
